@@ -2,10 +2,16 @@
 import 'dart:convert';
 import 'dart:math';
 
+import 'package:http/http.dart';
 import 'package:quran_sharif_bangla/model/ayatmodel.dart';
 import 'package:http/http.dart' as http;
 
+import '../model/surah_model.dart';
+
 class ApiServices {
+
+  final endPointUrl="http://api.alquran.cloud/v1/surah";
+  List<Surah>list=[];
   Future<ApiTool> getApiTool() async {
 
     // for random Aya we need to generate random number
@@ -24,6 +30,30 @@ class ApiServices {
   random(min, max){
     var rn = new Random();
     return min + rn.nextInt(max - min);
+  }
+
+
+
+  Future<List<Surah>>getSurah()async{
+    Response resp=await http.get(Uri.parse(endPointUrl));
+    if(resp.statusCode==200){
+      print("api ok");
+      Map<String,dynamic>json=jsonDecode(resp.body);
+      print("jsondecode ok");
+      json['data'].forEach((element){
+        if(list.length<114){
+          list.add(Surah.fromJSON(element));
+          print("fromjson ok");
+        }
+      });
+      print("ol ${list.length}");
+      return list;
+
+    }
+    else{
+      throw("can't get the surah");
+    }
+
   }
 
 
