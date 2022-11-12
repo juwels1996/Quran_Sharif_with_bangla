@@ -2,7 +2,7 @@ import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:quran_sharif_bangla/screen/home_screen.dart';
 import 'package:quran_sharif_bangla/screen/tabbar_screen/prayer_screen.dart';
-import 'package:quran_sharif_bangla/screen/tabbar_screen/quran_screen.dart';
+import 'package:quran_sharif_bangla/screen/tabbar_screen/quran_screen/quran_screen.dart';
 
 import 'tabbar_screen/audio_screen.dart';
 import 'tabbar_screen/home_page.dart';

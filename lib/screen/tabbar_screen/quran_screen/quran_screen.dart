@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:quran_sharif_bangla/screen/tabbar_screen/quran_screen/juz_screen.dart';
 import 'package:quran_sharif_bangla/service/api_service.dart';
+import 'package:quran_sharif_bangla/service/constants.dart';
+import 'package:quran_sharif_bangla/theme/pcolor.dart';
 import 'package:quran_sharif_bangla/widget/surah_tile.dart';
 
-import '../../model/surah_model.dart';
+import '../../../model/surah_model.dart';
 class QuranScreen extends StatefulWidget {
   const QuranScreen({Key? key}) : super(key: key);
 
@@ -58,9 +61,27 @@ class _QuranScreenState extends State<QuranScreen> {
                     Center(
                       child: Text("Quran"),
                     ),
-                    Center(
-                      child: Text("Hadidh"),
-                    )
+                    GestureDetector(
+                      child: Container(
+                        child: GridView.builder(
+                            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+                            itemCount: 30,
+                            itemBuilder: (context, index) {
+                              return GestureDetector(
+                                onTap: (){
+                                  setState(() {
+                                    Constantss.juzIndex=(index+1);
+                                  });
+                                  Navigator.pushNamed(context, JuzScreen.id);
+                                },
+                                child: Card(
+                                  elevation: 3,
+                                  color: Colors.blueGrey,
+                                  child: Text("${index+1}",style: TextStyle(color: Colors.red),),
+                                ),
+                              );
+                            })),
+                      ),
                   ]),
             )));
   }
