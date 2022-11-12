@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quran_sharif_bangla/screen/tabbar_screen/quran_screen/juz_screen.dart';
+import 'package:quran_sharif_bangla/screen/tabbar_screen/quran_screen/surah_details.dart';
 import 'package:quran_sharif_bangla/service/api_service.dart';
 import 'package:quran_sharif_bangla/service/constants.dart';
 import 'package:quran_sharif_bangla/theme/pcolor.dart';
@@ -51,7 +52,12 @@ class _QuranScreenState extends State<QuranScreen> {
                                 itemBuilder: (context, index) =>SurahListTile(
                                     surah: surah[index],
                                     context: context,
-                                    ontap: (){} ),
+                                    ontap: (){
+                                      setState(() {
+                                        Constantss.surahIndex=(index+1);
+                                      });
+                                      Navigator.pushNamed(context, SurahDetails.id);
+                                    } ),
                             );
                           }
                           return Center(

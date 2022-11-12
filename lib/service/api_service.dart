@@ -6,6 +6,7 @@ import 'package:http/http.dart';
 import 'package:quran_sharif_bangla/model/ayatmodel.dart';
 import 'package:http/http.dart' as http;
 import 'package:quran_sharif_bangla/model/juz_model.dart';
+import 'package:quran_sharif_bangla/model/surah_translation.dart';
 
 import '../model/surah_model.dart';
 
@@ -68,6 +69,17 @@ class ApiServices {
       print("Failed to load");
       throw Exception("Failed  to Load Post");
     }
+  }
+
+  Future<SurahTranslationList>getTranslation(int index)async{
+    final url='https://quranenc.com/api/v1/translation/sura/hindi_omari/$index';
+    var res=await http.get(Uri.parse(url));
+    if(res.statusCode==200){
+      print("response ok");
+    }
+
+
+    return SurahTranslationList.fromJson(json.decode(res.body));
   }
 
 }

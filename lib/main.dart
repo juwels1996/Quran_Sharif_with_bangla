@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quran_sharif_bangla/screen/home_screen.dart';
 import 'package:quran_sharif_bangla/screen/introduction_screen/splash_screen.dart';
 import 'package:quran_sharif_bangla/screen/tabbar_screen/quran_screen/juz_screen.dart';
+import 'package:quran_sharif_bangla/screen/tabbar_screen/quran_screen/surah_details.dart';
 import 'package:quran_sharif_bangla/theme/pcolor.dart';
 
 void main() {
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
       home: SplashScreen(),
       routes: {
         JuzScreen.id:(context)=>JuzScreen(),
+        SurahDetails.id:(context) => SurahDetails()
 
 
       },
