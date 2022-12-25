@@ -29,7 +29,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
                   padding: EdgeInsets.all(8.0),
                   child: Text(
-                    "Customize your reading view in multiple language,"
+                    "'Teach your children the Qur'an, and the Qur'an will teach them everything.',"
 
                       ,style: TextStyle(color: Colors.white,fontSize: 18),
                     textAlign: TextAlign.center,),
@@ -63,7 +63,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             textAlign: TextAlign.center,),
                         ),
                         Icon(Icons.edit,color: Colors.white,),
-                        Text(" Be Honest and help others",
+                        Text("Prayer makes man polite and good man",
                           style: TextStyle(color: Colors.white,fontSize: 18),
                           textAlign: TextAlign.center,),
                       ],
@@ -91,7 +91,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             textAlign: TextAlign.center,),
                         ),
                         Icon(Icons.edit,color: Colors.white,),
-                        Text(" Be Honest and help others",
+                        Text(" This is beauty of islam",
                           style: TextStyle(color: Colors.white,fontSize: 18),
                           textAlign: TextAlign.center,),
                       ],
